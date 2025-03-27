@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Masonry Grid Layout
 
-## Getting Started
+這是一個使用 Next.js 和 CSS Grid 實現的瀑布流布局專案。專案展示了如何使用現代的 CSS Grid 技術來創建響應式的瀑布流布局，特別適合展示不同尺寸的圖片內容。
 
-First, run the development server:
+## 功能特點
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 使用 CSS Grid 實現的瀑布流布局
+- 響應式設計，適應不同螢幕尺寸
+- 自動計算每個項目所需的高度
+- 優雅的圖片展示效果
+- 支援暗色/亮色主題切換
+
+## 技術棧
+
+- Next.js 15.2.4
+- React 19
+- TypeScript
+- Tailwind CSS
+- CSS Grid Layout
+
+## 專案結構
+
+```
+masonry-grid/
+├── app/                    # Next.js 應用程式主目錄
+├── components/            # React 組件
+├── constants/            # 常數定義
+├── utils/               # 工具函數
+└── public/              # 靜態資源
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 主要實現方式
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+專案使用 CSS Grid 實現瀑布流布局，主要通過以下方式：
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. 使用 `grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))` 創建自適應的網格列
+2. 通過 JavaScript 動態計算每個項目所需的高度
+3. 使用 `grid-row-end: span X` 來控制每個項目跨越的行數
 
-## Learn More
+## 開始使用
 
-To learn more about Next.js, take a look at the following resources:
+1. 克隆專案：
+```bash
+git clone [repository-url]
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. 安裝依賴：
+```bash
+npm install
+# 或
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. 運行開發服務器：
+```bash
+npm run dev
+# 或
+yarn dev
+```
 
-## Deploy on Vercel
+4. 在瀏覽器中打開 [http://localhost:3000](http://localhost:3000) 查看結果
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 開發指南
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 修改 `app/page.tsx` 來更新頁面內容
+- 調整 `app/globals.css` 中的樣式來改變布局
+- 在 `constants/albumPhotos.ts` 中管理圖片數據
+- 使用 `utils/masonry.ts` 中的函數來處理瀑布流布局的計算
+
+## 部署
+
+這個專案可以輕鬆部署到 Vercel 平台：
+
+1. 將代碼推送到 GitHub
+2. 在 Vercel 中導入專案
+3. 自動部署完成
+
+## 授權
+
+MIT License
