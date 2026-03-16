@@ -57,7 +57,7 @@ export function resizeAllMasonryItems() {
    * Loop through the above list and execute the spanning function to
    * each list-item (i.e. each masonry item)
    */
-  for (let i = 0; i > allItems.length; i++) {
+  for (let i = 0; i < allItems.length; i++) {
     resizeMasonryItem(allItems[i]);
   }
 }
